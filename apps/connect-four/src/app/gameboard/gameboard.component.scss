@@ -1,0 +1,35 @@
+.connect-four-gameboard {
+  display: flex;
+  // border: 1px solid darkgray;
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    cursor: pointer;
+
+    &-piece {
+      display: flex;
+      border: 1px solid darkgray;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  .game-piece {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 90%;
+    border-radius: 100px;
+  }
+  .player-one-piece {
+    @extend .game-piece;
+    background-color: red;
+    border: 1px solid rgb(97, 0, 0);
+  }
+  .player-two-piece {
+    @extend .game-piece;
+    background-color: yellow;
+    border: 1px solid rgb(116, 116, 0);
+  }
+}

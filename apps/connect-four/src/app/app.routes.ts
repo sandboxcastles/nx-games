@@ -1,3 +1,9 @@
 import { Route } from '@angular/router';
+import { GameboardComponent } from './gameboard/gameboard.component';
 
-export const appRoutes: Route[] = [];
+export const appRoutes: Route[] = [
+  {
+    path: 'game',
+    component: GameboardComponent,
+  },
+];

@@ -1,0 +1,29 @@
+<ng-container *ngIf="game.winner; else gameInProgress">
+  <h2>Winner: Player {{ game.winner }}</h2>
+  <button (click)="game.reset()">New Game</button>
+</ng-container>
+<ng-template #gameInProgress>
+  <h2>Player {{ game.currentPlayer }}'s Turn</h2>
+</ng-template>
+<div class="connect-four-gameboard">
+  <div
+    *ngFor="let column of game.gameboard; let i = index"
+    class="connect-four-gameboard__column"
+    (click)="game.addPiece(i)"
+  >
+    <div
+      *ngFor="let columnPiece of column.reverse(); let ci = index"
+      class="connect-four-gameboard__column-piece"
+
+    >
+      <div
+        [ngClass]="{
+          'player-one-piece': game.player1 === columnPiece,
+          'player-two-piece': game.player2 === columnPiece
+        }"
+      >
+        <span>{{ columnPiece }}</span>
+      </div>
+    </div>
+  </div>
+</div>
