@@ -3,7 +3,7 @@ import { GameboardComponent } from './gameboard/gameboard.component';
 
 export const appRoutes: Route[] = [
   {
-    path: 'game',
+    path: '',
     component: GameboardComponent,
   },
 ];
